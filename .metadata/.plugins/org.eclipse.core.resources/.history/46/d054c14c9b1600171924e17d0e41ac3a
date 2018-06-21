@@ -1,0 +1,94 @@
+package com.homework.three;
+
+public class demo {
+
+	public static void main(String[] args) {
+//		demo demo = new demo();
+		// System.out.println(demo.add(1, 0));
+//		new D();
+		Thread thread1 = new MyThread();
+		Thread thread2 = new MyThread();
+		thread1.start();
+		thread2.start();
+	}
+
+	/**
+	 * 递归排序计算:1!+2!+...+n!
+	 * 
+	 * @param j
+	 * @param count
+	 * @return
+	 */
+	public int add(int j, int count) {
+		for (int i = 1; i <= j; i++) {
+			count = count + i;
+			System.out.println("count=" + count);
+		}
+		if (j >= 10) {
+			return count;
+		} else {
+			j++;
+			System.out.println(j);
+			return add(j, count);
+		}
+	}
+}
+
+class D extends C {
+	public String sd1 = getSd1();
+	public static String sd = getSd();
+	static {
+		System.out.println("执行D的static静态代码块");
+	}
+	{
+		System.out.println("执行D的普通初始化块");
+	}
+
+	D() {
+		System.out.println("D的构造函数");
+	}
+
+	static public String getSd() {
+		System.out.println("初始化D的实例变量sd");
+		return "sd";
+	}
+
+	public String getSd1() {
+		System.out.println("初始化D的实例变量sd1");
+		return "sd1";
+	}
+}
+
+class C {
+	static {
+		System.out.println("执行C的static静态代码块");
+	}
+	{
+		System.out.println("执行C的普通初始化块");
+	}
+
+	C() {
+		System.out.println("C的构造函数");
+	}
+}
+
+class MyThread extends Thread {
+	private static int num;
+	@Override
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			synchronized (this.getClass()) {
+				num++;
+				System.out.println("num="+num);
+				if(num==5){
+					try {
+						wait();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+//			notify();
+		}
+	}
+}

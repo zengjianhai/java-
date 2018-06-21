@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;BIDR.java&apos; to &apos;jdbcTest/src/com.briup.demo&apos;&#x0D;&#x0A;- Original project: &apos;demo&apos;&#x0D;&#x0A;- Destination element: &apos;jdbcTest/src/com.briup.demo&apos;&#x0D;&#x0A;- Original element: &apos;briup.internet.BIDR.java&apos;" description="Copy compilation unit" destination="=jdbcTest/src&lt;com.briup.demo" element1="/src&lt;briup.internet{BIDR.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1490799196895" units="1" version="1.0"/>
+</session>

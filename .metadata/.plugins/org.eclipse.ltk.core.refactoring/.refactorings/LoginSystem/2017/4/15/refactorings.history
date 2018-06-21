@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ConnectionFactory.java&apos; to &apos;ecjtu-web/src/com.briup.param&apos;&#x0D;&#x0A;- Original project: &apos;LoginSystem&apos;&#x0D;&#x0A;- Destination element: &apos;ecjtu-web/src/com.briup.param&apos;&#x0D;&#x0A;- Original element: &apos;briup.jdbcTest.ConnectionFactory.java&apos;" description="Copy compilation unit" destination="=ecjtu-web/src&lt;com.briup.param" element1="/src&lt;briup.jdbcTest{ConnectionFactory.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1492133711056" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,17 @@
+
+<!--自定义标签-->
+	<!ELEMENT students ANY>
+	<!ELEMENT teacher (name+,age?,gender,address*,score,study)>
+	<!-- name后面要有空格 -->
+	<!ELEMENT name (fname,lname)>
+	<!ELEMENT fname (#PCDATA)>
+	<!ELEMENT lname EMPTY>
+	<!ENTITY address "青山湖区双港东大道">
+	<!-- REQUIRED表示必须有值-->
+	<!ATTLIST teacher id ID #REQUIRED>
+	<!-- IMPLIED表示可有可无值-->
+	<!ATTLIST name value CDATA #IMPLIED>
+	<!ATTLIST gander value (male|female) "male">
+	<!ATTLIST score grade (low|middle|high) #REQUIRED>
+	<!ATTLIST score passwd CDATA #FIXED "60">
+	<!ENTITY fname "曾建海">

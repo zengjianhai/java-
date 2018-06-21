@@ -1,0 +1,39 @@
+package com.socketDemo1;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+/**
+ * socket通信用PrintWriter和BufferedRead
+ * 
+ * @author xunfeng
+ *
+ */
+public class ServerDemo1 {
+
+	public static void main(String[] args) {
+		ServerDemo1 serverDemo1 = new ServerDemo1();
+		serverDemo1.ServerClient();
+	}
+
+	public void ServerClient(){
+		ServerSocket ss=null;
+		Socket socket = null;
+		PrintWriter pw=null;
+		try {
+			ss = new ServerSocket(8989);
+			socket = ss.accept();
+			System.out.println("服务器连接成功");
+			pw = new PrintWriter(socket.getOutputStream());
+			pw.println("this is 服务器");
+			pw.flush();
+//			pw.close();
+			socket.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

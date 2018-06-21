@@ -1,0 +1,29 @@
+package com.homework.three;
+
+public class demo {
+
+	public static void main(String[] args) {
+		demo demo = new demo();
+		System.out.println(demo.add(1, 0));
+		
+	}
+	/**
+	 * µ›πÈ≈≈–Úº∆À„:1!+2!+...+n!
+	 * @param j
+	 * @param count
+	 * @return
+	 */
+	public int add(int j,int count){
+		for (int i=1; i <= j; i++) {
+			count = count+i;
+			System.out.println("count="+count);
+		}
+		if(j>=10){
+			return count;
+		}else{
+			j++;
+			System.out.println(j);
+			return add(j, count);
+		}
+	}
+}

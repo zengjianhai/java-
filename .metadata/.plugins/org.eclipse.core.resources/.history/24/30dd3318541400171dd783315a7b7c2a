@@ -1,0 +1,44 @@
+package com.briup.demo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class BatchTest {
+
+	private static Connection conn;
+	private static Statement statement;
+	private static PreparedStatement pst;
+	
+	public static void main(String[] args) {
+		conn = ConnectionFactory.getConnection();
+		try {
+			String sql="insert into stu values(?,?,?,?)";
+			
+			pst = conn.prepareStatement(sql);
+			for(int i=1;i<=31;i++){
+//				pst.setInt(1, i);
+//				pst.setString(2, "briup"+i);
+//				pst.setString(3, "briup"+i);
+//				pst.setInt(4, i);
+//				pst.addBatch();
+//				if(i%5000==0){
+//					pst.executeBatch();
+//					pst.clearBatch();
+//				}
+				String sql1 = "create table t_detail_"+i+"(login_name varchar2(30),"
+						+ "login_id varchar2(32),nas_id varchar2(32),login_date date,logout_date date,"
+						+ "time_duration number(10)";
+			}
+			pst.executeBatch();
+//			statement =  conn.createStatement();
+//			String sql = "insert into stu values(1,'tom','123',20)";
+//			String sql2 = "update stu set age = 30 where id=1";
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

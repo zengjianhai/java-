@@ -1,0 +1,10 @@
+package com.homework.three;
+
+public class demo {
+
+	public static void main(String[] args) {
+		demo demo = new demo();
+		
+	}
+
+}

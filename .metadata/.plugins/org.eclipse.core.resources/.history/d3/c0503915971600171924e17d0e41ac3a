@@ -1,0 +1,25 @@
+package com.homework.three;
+
+public class demo {
+
+	public static void main(String[] args) {
+		demo demo = new demo();
+		System.out.println(demo.add(1, 0));
+		
+	}
+
+	public int add(int j,int count){
+		for (int i=1; i <= j; i++) {
+			count = count+i;
+			System.out.println("count="+count);
+		}
+		if(j>10){
+			
+		}else{
+			j++;
+			System.out.println(j);
+			add(j, count);
+		}
+		return add(j, count);
+	}
+}
