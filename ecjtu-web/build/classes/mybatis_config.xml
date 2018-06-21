@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+			"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--把数据库连接用的信息写到application.properties文件中，applications.properties文件中的值优先级高 -->
+	<properties resource="db.properties" />
+	<!-- 为com.briup.pojo.Student弄一个别名 -->
+	<settings>
+		<setting name="logPrefix" value="我的日志： " />
+	</settings>
+	<typeAliases>
+		<!-- 别名 -->
+		<typeAlias alias="User" type="com.briup.param.User" />
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${user}" />
+				<property name="password" value="${passwd}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper class="com.briup.param.UserDao" />
+	</mappers>
+</configuration> 
