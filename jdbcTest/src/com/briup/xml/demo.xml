@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students SYSTEM "student.dtd">
+<!--  
+<!DOCTYPE students[-->
+<!--自定义标签-->
+	<!--  <!ELEMENT students ANY>
+	<!ELEMENT teacher (name+,age?,gender,address*,score,study)>-->
+	<!-- name后面要有空格 -->
+	<!--<!ELEMENT name (fname,lname)>
+	<!ELEMENT fname (#PCDATA)>
+	<!ELEMENT lname EMPTY>
+	<!ENTITY address "青山湖区双港东大道">-->
+	<!-- REQUIRED表示必须有值-->
+	<!--<!ATTLIST teacher id ID #REQUIRED>-->
+	<!-- IMPLIED表示可有可无值-->
+	<!--<!ATTLIST name value CDATA #IMPLIED>
+	<!ATTLIST gander value (male|female) "male">
+	<!ATTLIST score grade (low|middle|high) #REQUIRED>
+	<!ATTLIST score passwd CDATA #FIXED "60">
+	<!ENTITY fname "曾建海">
+]>
+-->
+<students>
+<!---->
+	<class id="杰普一班">
+		<!-- <student id="1"> <name>&name;</name> <age>22</age> <gender>male</gender> 
+			<address city="南昌">&address;</address> <score>99</score> <study>xml</study> 
+			<xml>&lt;xml&gt; <![CDATA[ function test(a,b){ if(a>b){ alter("华东交大"); }else{ 
+			console.info("星际学院"); } } ]]> </xml> </student> -->
+		<student id="2">
+			<name>
+				<fname>java</fname>
+				<lname></lname>
+			</name>
+			<age>21</age>
+			<gender>male</gender>
+			<address city="南昌">&address;
+			</address>
+			<score grade="high" passwd="60">89</score>
+			<study>java</study>
+		</student>
+		<teacher id="a">
+			<name value="name">
+				<fname>&fname;</fname>
+				<lname></lname>
+			</name>
+			<name>
+				<fname>java</fname>
+				<lname></lname>
+			</name>
+			<age>21</age>
+			<gender value="male">male</gender>
+			<address city="南昌">&address;</address>
+			<score grade="high" passwd="60">89</score>
+			<study>java</study>
+		</teacher>
+	</class>
+</students>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+	<employee id="1" depName="教育部">
+		<name>tom</name>
+		<age>19</age>
+		<gender>male</gender>
+		<salary>1000</salary>
+	</employee>
+	<employee id="2" depName="市场部">
+		<name>java</name>
+		<age>45</age>
+		<gender>male</gender>
+		<salary>10000</salary>
+	</employee>
+	<employee id="3" depName="技术部">
+		<name>灵儿</name>
+		<age>19</age>
+		<gender>female</gender>
+		<salary>6000</salary>
+	</employee>
+</employees>

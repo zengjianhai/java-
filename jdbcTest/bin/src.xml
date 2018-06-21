@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<woss>
+	<gather class="com.briup.gather.Gather">
+		<path>src/radwtmp_test</path>
+	</gather>
+	<client class="com.briup.socket.ClientImpl">
+		<ip>127.0.0.1</ip>
+		<port>8989</port>
+	</client>
+	<server class="com.briup.socket.ServerImpl">
+		<port>8989</port>
+	</server>
+	<dbstore class="com.briup.jdbc.DBImple">
+		<driver>oracle.jdbc.OracleDriver</driver>
+		<url>jdbc:oracle:thin:@localhost:1521:XE</url>
+		<username>jianhai</username>
+		<password>xunfeng</password>
+		<batch>500</batch>
+	</dbstore>
+</woss>
