@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.reader.BookMapper">
+<resultMap type="Book" id="BookResult">
+    <result property="id" column="id"/>
+    <result property="bookName" column="bookName"/>
+    <result property="author" column="author"/>
+    <result property="publishDate" column="publishDate"/>
+    <result property="price" column="bookPrice"/>
+</resultMap>
+<insert id="addBook" parameterType="Book">
+    INSERT INTO BOOKS(ID,BOOKNAME,AUTHOR,PUBLISHDate,BOOKPRICE)
+    VALUES(#{id},#{bookName},#{author},#{publishDate},#{price})
+</insert>
+<delete id="removeBook" parameterType="int">
+    DELETE BOOKS WHERE ID=#{id}
+</delete>
+<select id="findBookByName" parameterType="String" resultType="Book">
+    SELECT id,bookName,author,publishDate,bookPrice as price 
+    FROM BOOKS
+    WHERE bookName=#{bookName}
+</select>
+<select id="findBookById" parameterType="int" resultType="Book">
+    SELECT id,bookName,author,publishDate,bookPrice as price 
+    FROM BOOKS
+    WHERE bookId=#{id}
+</select>
+<select id="findAllBooks" resultMap="BookResult">
+    SELECT id,bookName,author,publishDate,bookPrice as price FROM BOOKS
+</select>
+<select id="findAllBooksName" resultType="String">
+    SELECT bookName FROM BOOKS
+</select>
+<select id="findCountOfBook" resultType="int">
+    SELECT COUNT(*) FROM BOOKS
+</select>
+<update id="updateBook" parameterType="Book">
+    UPDATE BOOKS SET bookName=#{bookName},author=#{author},publishDate=#{publishDate},bookPrice=#{price}
+    WHERE bookId=#{id}
+</update>
+<select id="findBookNameAndAuthor" resultType="java.util.HashMap">
+    SELECT bookName,author FROM BOOKS 
+</select>
+</mapper>
+			

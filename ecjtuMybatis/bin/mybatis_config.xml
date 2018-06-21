@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+			"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--把数据库连接用的信息写到application.properties文件中，applications.properties文件中的值优先级高 -->
+	<properties resource="application.properties" />
+	<!-- 为com.briup.pojo.Student弄一个别名 -->
+	<settings>
+		<setting name="logPrefix" value="我的日志： " />
+	</settings>
+	<typeAliases>
+		<!-- 别名 -->
+		<typeAlias alias="Student" type="com.briup.pojo.Student" />
+		<typeAlias alias="Address" type="com.briup.pojo.Address" />
+		<package name="com.briup.one2marry" />
+		<package name="com.briup.pojo" />
+		<package name="com.briup.many2many" />
+		<package name="com.briup.reader" />
+		<package name="com.briup.annotation" />
+	</typeAliases>
+	<typeHandlers>
+		<typeHandler handler="com.briup.typehandlers.PhoneTypeHandler" />
+	</typeHandlers>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<!-- <property name="driver" value="com.mysql.jdbc.Driver" /> <property 
+					name="url" value="jdbc:mysql://localhost:3306/test" /> -->
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+		<!-- 另一个运行环境，root用户数据库 -->
+		<environment id="test">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="root" />
+				<property name="password" value="root" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<!-- <mapper resource="com/briup/pojo/StudentMapper.xml" /> -->
+		<mapper class="com.briup.pojo.StudentMapper" />
+		<mapper class="com.briup.extend.ExtendStudentMapper" />
+		<mapper class="com.briup.one2one.One2One" />
+		<mapper class="com.briup.one2marry.One2MarryMapper" />
+		<mapper class="com.briup.many2many.Many2ManyMapper" />
+		<mapper class="com.briup.reader.BookMapper" />
+		<mapper class="com.briup.dynamic.DynamicMapper" />
+		<mapper class="com.briup.annotation.AnnotationMapper" />
+	</mappers>
+</configuration> 
